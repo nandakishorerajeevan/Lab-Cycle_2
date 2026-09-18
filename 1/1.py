@@ -11,7 +11,7 @@ def find_name_occurrences(wordlist, name):
     return (count, indices)
 
 
-name = input("\nEnter the name to search for : ")
+name = input("\nEnter the name to search for (in this txt file, it is only 'ver'): ")
 
 with open("wordlist.txt", "r") as file:
     wordlist = [word.strip() for word in file]
