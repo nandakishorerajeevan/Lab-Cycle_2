@@ -21,7 +21,7 @@ def cars_of_companies():
     companies_car = df.groupby("company")["model_name"]
 
     for company, models in companies_car:
-        print(f"\n== {company} ==")
+        print(f"\n== {company.upper()} ==")
         print("----------------")
 
         for model in models.dropna():
@@ -35,7 +35,7 @@ def show_average_mileage_of_companies():
 
     for company, mileage in companies_car:
         average_mileage = mileage.mean()
-        print(f"\n== {company} ==")
+        print(f"\n== {company.upper()} ==")
         print("----------------")
         print(f"Average Mileage: {average_mileage:.2f}")
 
