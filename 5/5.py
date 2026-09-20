@@ -1,7 +1,3 @@
-import pandas as pd
-import numpy as np
-
-
 def repetation_of_word_count():
     word = str(input("\nEnter the word to search from the text file : ")).lower()
     with open("5.txt", "r") as file:
@@ -9,7 +5,6 @@ def repetation_of_word_count():
 
     count = text_file.count(word)
     print(f"\n>> The word '{word}' is repeated '{count}' times in the text file.\n")
-
 
 
 def repeat_word_in_dictionary():
@@ -33,13 +28,11 @@ def repeat_word_in_dictionary():
     print("\n", word_dictionary)
 
 
-
 def menu():
     print("\n### MENU ###")
     print("1. Count the repetition of a word in the text file")
     print("2. Find the index of a word in each sentence of the text file")
     print("3. Exit")
-
 
 
 def main():
