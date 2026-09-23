@@ -21,6 +21,9 @@ def repeat_word_in_dictionary():
     with open("5.txt", "r") as file:
         text_file = file.read().lower()
 
+    for symbol in ".,!?;:'\"()[]{}":
+        text_file = text_file.replace(symbol, "")
+
     sentences = text_file.splitlines()
 
     word_dictionary = {}
