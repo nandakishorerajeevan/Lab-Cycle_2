@@ -36,7 +36,7 @@ def show_average_mileage_of_companies():
     for company, mileage in companies_car:
         average_mileage = mileage.mean()
         print(f"\n== {company.upper()} ==")
-        print("----------------")
+        print("-" * 20)
         print(f"Average Mileage: {average_mileage:.2f}")
 
 

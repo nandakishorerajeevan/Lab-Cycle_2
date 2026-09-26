@@ -1,4 +1,3 @@
-import csv
 import pandas as pd
 import matplotlib.pyplot as plt
 import calendar
@@ -6,16 +5,24 @@ import numpy as np
 
 
 def create_contribution_table():
-    with open("contribution_table.csv", "w", newline="") as file:
-        writer = csv.writer(file)
-        writer.writerow(["SN", "Name", "Country", "Contribution", "Year"])
-        writer.writerow([1, "Linus Torvalds", "Finland", "Linux Kernel", 1991])
-        writer.writerow([2, "Tim Berners-Lee", "England", "World Wide Web", 1990])
-        writer.writerow([3, "Guido van Rossum", "Netherlands", "Python", 1991])
+    data = {
+        "SN": [1, 2, 3],
+        "Name": ["Linus Torvalds", "Tim Berners-Lee", "Guido van Rossum"],
+        "Country": ["Finland", "England", "Netherlands"],
+        "Contribution": ["Linux Kernel", "World Wide Web", "Python"],
+        "Year": [1991, 1990, 1991],
+    }
 
-    print(f"\nContribution table created successfully in contribution_table.csv\n")
-    df = pd.read_csv("contribution_table.csv")
-    print(df, "\n")
+    df = pd.DataFrame(data)
+    df.to_csv("contributors_table.csv", index=False)
+
+    print("\n>> contributors_table.csv created successfully.\n")
+    show_data = input(">> press '1' to show the data \n>> else press AnyKey\n")
+
+    if show_data == "1":
+        print("\n>>contributors_table.csv :\n\n", df)
+    else:
+        return
 
 
 def toothpaste_sales_scatter_plot():
