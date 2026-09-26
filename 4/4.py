@@ -16,6 +16,14 @@ def create_contribution_table():
     df = pd.DataFrame(data)
     df.to_csv("contributors_table.csv", index=False)
 
+    print("\n>> contributors_table.csv created successfully.\n")
+    show_data = input(">> press '1' to show the data \n>> else press AnyKey\n")
+
+    if show_data == "1":
+        print("\n>>contributors_table.csv :\n\n", df)
+    else:
+        return
+
 
 def toothpaste_sales_scatter_plot():
     df = pd.read_csv("company.csv")
