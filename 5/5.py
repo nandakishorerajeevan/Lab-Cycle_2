@@ -12,7 +12,7 @@ def repetation_of_word_count():
     words = text_file.split()
 
     counts = words.count(word)
-    print(f"\n>> The word '{word}' is repeated '{counts}' times in the text file.\n")
+    print(f"\n   >> The word '{word}' is repeated '{counts}' times in the text file.\n")
 
 
 def repeat_word_in_dictionary():
