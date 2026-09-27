@@ -3,18 +3,19 @@ import matplotlib.pyplot as plt
 import calendar
 import numpy as np
 
+data = {
+    "SN": [1, 2, 3],
+    "Name": ["Linus Torvalds", "Tim Berners-Lee", "Guido van Rossum"],
+    "Country": ["Finland", "England", "Netherlands"],
+    "Contribution": ["Linux Kernel", "World Wide Web", "Python"],
+    "Year": [1991, 1990, 1991],
+}
+
+df = pd.DataFrame(data)
+df.to_csv("contributors_table.csv", index=False)
+
 
 def create_contribution_table():
-    data = {
-        "SN": [1, 2, 3],
-        "Name": ["Linus Torvalds", "Tim Berners-Lee", "Guido van Rossum"],
-        "Country": ["Finland", "England", "Netherlands"],
-        "Contribution": ["Linux Kernel", "World Wide Web", "Python"],
-        "Year": [1991, 1990, 1991],
-    }
-
-    df = pd.DataFrame(data)
-    df.to_csv("contributors_table.csv", index=False)
 
     print("\n>> contributors_table.csv created successfully.\n")
     show_data = input(">> press '1' to show the data \n>> else press AnyKey\n")
@@ -26,7 +27,7 @@ def create_contribution_table():
 
 
 def toothpaste_sales_scatter_plot():
-    df = pd.read_csv("company.csv")
+
     plt.scatter(df["month_number"], df["toothpaste"])
     plt.title("Monthly Toothpaste Sales")
     plt.xlabel("Month")
@@ -41,7 +42,7 @@ def toothpaste_sales_scatter_plot():
 
 
 def facecream_facewash_sales_barchart():
-    df = pd.read_csv("company.csv")
+
     x = np.arange(len(df))
     width = 0.4
 
@@ -49,22 +50,24 @@ def facecream_facewash_sales_barchart():
 
     plt.bar(x + width / 2, df["facewash"], width, color="red", label="Face Wash")
 
+    plt.xlabel("Month")
+    plt.ylabel("Sales")
+    plt.title("Monthly Product Sales")
+    plt.legend()
+
     plt.xticks(
         x,
         [calendar.month_abbr[i] for i in range(1, len(df) + 1)],
         rotation=90,
     )
     max_sales = max(df["facecream"].max(), df["facewash"].max())
+
     plt.yticks(range(0, int(max_sales) + 1000, 500))
-    plt.xlabel("Month")
-    plt.ylabel("Sales")
-    plt.title("Monthly Product Sales")
-    plt.legend()
     plt.show()
 
 
 def year_sales_piechart():
-    df = pd.read_csv("company.csv")
+
     sales = [
         df["facecream"].sum(),
         df["facewash"].sum(),
