@@ -32,9 +32,12 @@ def show_csv_file():
 def before_2000():
     print("\ninnovators who contributed before the year '____' ")
     year_given = int(input("Enter the Year :"))
-    print(f"\ninnovators who contributed before the year {year_given}: \n")
-    name_index = df["Year"] < year_given
-    name_of_contributor = df.loc[name_index, ["Name", "Year"]]
+
+    print(f"\ninnovators who contributed before {year_given} : \n")
+
+    year_index = df["Year"] < year_given
+    name_of_contributor = df.loc[year_index, ["Name", "Year"]]
+
     if name_of_contributor.empty:
         print(f"  >> No contributors in the list before {year_given}!")
     else:
