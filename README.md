@@ -1,6 +1,9 @@
-# Lab-Cycle_2
+<div align="center">
 
-# Python Data Analysis and Visualization Programs
+# Lab-Cycle_2
+### Python Data Analysis and Visualization Programs
+
+</div>
 
 A collection of nine Python practical programs covering string processing, numerical computation, Pandas data handling, CSV file operations, and data visualization with Matplotlib.
 
@@ -32,29 +35,32 @@ python-data-analysis-practicals/
 ├── README.md
 ├── requirements.txt
 ├── 01_word_substring/
-│   ├── main.py
+│   ├── 1.py
 │   └── wordlist.txt
 ├── 02_automobile_analysis/
-│   ├── main.py
-│   └── auto.csv
+│   ├── 2.py
+│   └── auto-mpg.csv
 ├── 03_fair_attendance/
-│   └── main.py
+│   └── 3.py
 ├── 04_company_sales/
-│   ├── main.py
-│   └── company.csv
+│   ├── 4.py
+│   ├── company.csv
+|   └── contributors_table.csv
 ├── 05_word_frequency/
-│   ├── main.py
+│   ├── 5.py
 │   └── 5.txt
 ├── 06_student_records/
-│   ├── main.py
+│   ├── 6.py
 │   └── students.csv
 ├── 07_tech_innovators/
-│   └── main.py
+│   ├── 7.py
+|   └── tech_innovators.csv
 ├── 08_sales_visualization/
-│   ├── main.py
+│   ├── 8.py
 │   └── sales_data.csv
-└── 09_iris_analysis/
-    └── main.py
+├── 09_iris_analysis/
+|   ├── 9.py
+|   └── iris.csv
 ```
 
 This is a suggested structure; adjust file and folder names to match your actual repository.
