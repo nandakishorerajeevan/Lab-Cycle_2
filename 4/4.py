@@ -14,6 +14,8 @@ data = {
 df = pd.DataFrame(data)
 df.to_csv("contributors_table.csv", index=False)
 
+df1 = pd.read_csv("company.csv")
+
 
 def create_contribution_table():
 
@@ -28,27 +30,27 @@ def create_contribution_table():
 
 def toothpaste_sales_scatter_plot():
 
-    plt.scatter(df["month_number"], df["toothpaste"])
+    plt.scatter(df1["month_number"], df1["toothpaste"])
     plt.title("Monthly Toothpaste Sales")
     plt.xlabel("Month")
     plt.ylabel("Toothpaste Sales")
     plt.xticks(
-        range(1, len(df) + 1),
-        [calendar.month_abbr[i] for i in range(1, len(df) + 1)],
+        range(1, len(df1) + 1),
+        [calendar.month_abbr[i] for i in range(1, len(df1) + 1)],
         rotation=90,
     )
-    plt.yticks(range(0, int(df["toothpaste"].max()) + 1000, 500))
+    plt.yticks(range(0, int(df1["toothpaste"].max()) + 1000, 500))
     plt.show()
 
 
 def facecream_facewash_sales_barchart():
 
-    x = np.arange(len(df))
+    x = np.arange(len(df1))
     width = 0.4
 
-    plt.bar(x - width / 2, df["facecream"], width, color="green", label="Face Cream")
+    plt.bar(x - width / 2, df1["facecream"], width, color="green", label="Face Cream")
 
-    plt.bar(x + width / 2, df["facewash"], width, color="red", label="Face Wash")
+    plt.bar(x + width / 2, df1["facewash"], width, color="red", label="Face Wash")
 
     plt.xlabel("Month")
     plt.ylabel("Sales")
@@ -57,10 +59,10 @@ def facecream_facewash_sales_barchart():
 
     plt.xticks(
         x,
-        [calendar.month_abbr[i] for i in range(1, len(df) + 1)],
+        [calendar.month_abbr[i] for i in range(1, len(df1) + 1)],
         rotation=90,
     )
-    max_sales = max(df["facecream"].max(), df["facewash"].max())
+    max_sales = max(df1["facecream"].max(), df1["facewash"].max())
 
     plt.yticks(range(0, int(max_sales) + 1000, 500))
     plt.show()
@@ -69,12 +71,12 @@ def facecream_facewash_sales_barchart():
 def year_sales_piechart():
 
     sales = [
-        df["facecream"].sum(),
-        df["facewash"].sum(),
-        df["toothpaste"].sum(),
-        df["bathingsoap"].sum(),
-        df["shampoo"].sum(),
-        df["moisturizer"].sum(),
+        df1["facecream"].sum(),
+        df1["facewash"].sum(),
+        df1["toothpaste"].sum(),
+        df1["bathingsoap"].sum(),
+        df1["shampoo"].sum(),
+        df1["moisturizer"].sum(),
     ]
     products = [
         "Face Cream",
